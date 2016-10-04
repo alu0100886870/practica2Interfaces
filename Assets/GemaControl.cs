@@ -17,7 +17,7 @@ void Awake ()
 
 	// Use this for initialization
 	void Start () {
-	GetComponent<Light>().intensity = 0;
+		GetComponent<Light>().intensity = 0;
 		activated = false;
 	}
 	
@@ -31,8 +31,9 @@ void Awake ()
 	
 	
 		void Activate(Collider obj){
-		if (obj.gameObject.name.Contains("GemaV")){
-		activated = true;
+		Debug.Log("Se ha activado la colision de una gema!");
+		if (obj.gameObject.name.Equals(gameObject.transform.name)){
+			activated = true;
 			Debug.Log("Collisionado con la gema DESDE LA GEMA");
 		}
 	}
